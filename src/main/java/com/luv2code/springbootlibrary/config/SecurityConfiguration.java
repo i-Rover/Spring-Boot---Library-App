@@ -16,7 +16,8 @@ public class SecurityConfiguration {
         http.csrf().disable();
         //Protect endpoints at /api/<type>/secure
         http.authorizeHttpRequests(configurer->
-                configurer.antMatchers("/api/books/secure/**")
+                configurer.antMatchers("/api/books/secure/**",
+                        "api/reviews/secure/**")
                         .authenticated())
                 .oauth2ResourceServer()
                 .jwt();
