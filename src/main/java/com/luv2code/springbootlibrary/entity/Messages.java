@@ -10,10 +10,12 @@ import javax.persistence.*;
 public class Messages {
     public Messages(){}
 
-    public Messages(String title, String question){
+    public Messages(String title, String question, boolean closed){
         this.title = title;
         this.question = question;
+        this.closed = closed;
     }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
